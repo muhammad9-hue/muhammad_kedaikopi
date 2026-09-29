@@ -39,7 +39,13 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // 1. Buat konstanta "NAMA_KEDAI" bertipe string (misal: "Kopi PSTI Kampus").
 // 2. Buat variabel "namaKasir" (misal: "Kak Eko") dan "shiftKerja" menggunakan "let".
 // 3. Cetak nilai NAMA_KEDAI, namaKasir, dan shiftKerja ke Console menggunakan console.log().
+const NAMA_KEDAI = "Kopi PSTI Kampus";
+let namakasir = "Kak Eko";
+let shiftkerja = "Pagi";
 
+console.log("Nama kedai:", NAMA_KEDAI);
+console.log("nama kasir:", namakasir);
+console.log("shift kerja:", shiftkerja);
 
 
 
@@ -47,8 +53,8 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // TODO 2B:
 // Ubah (re-assign) nilai variabel "namaKasir" dengan nama kasir lain,
 // lalu cetak ke Console untuk membuktikan bahwa variabel "let" nilainya dapat diubah.
-
-
+namakasir = "Muhammad";
+console.log("Muhammad:", namakasir);
 
 
 // ---- BAGIAN 2B: INPUT INTERAKTIF & PENGANDAIAN DASAR ----
@@ -58,9 +64,18 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // 3. Gunakan percabangan "if - else":
 //    - JIKA namaPelanggan ada isinya: tampilkan alert sapaan dan log ke console.
 //    - JIKA namaPelanggan kosong / klik Cancel: beri nilai default "Pelanggan Setia" dan tampilkan alert pemberitahuan.
+alert(" Selamat datang di " + NAMA_KEDAI + "!");
 
+let namapelanggan = prompt(" Masukan nama Anda:");
 
-
+if (namapelanggan && namapelanggan.trim() !== "") {
+    alert("Halo," + namapelanggan + "! Selamat Datang Kembali.");
+    console.log("Pelanggan Teridentifikasi:", namapelanggan);
+} else{
+    namapelanggan = "pelanggan setia";
+    alert("namatidak diisi. Anda di proses sebagai " + namapelanggan + ".");
+    console.log("Pelanggan menggunakan nama default:", namapelanggan);
+}
 
 // ============================================================
 // AKTIVITAS 3: Operasi Aritmatika — Akumulasi Poin Transaksi
@@ -72,8 +87,17 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 //    (isi dengan angka bulat bebas, misal: 45, 35, 20).
 // 2. Buat variabel "totalPoin" yang menjumlahkan ketiga variabel poin di atas.
 // 3. Cetak rincian perolehan poin dan totalPoin ke Console menggunakan console.log().
+let poinKopi = 45;
+let poinMakanan = 35;
+let poinMerchandise = 20;
 
+let totalpoin = poinKopi + poinMakanan + poinMerchandise;
 
+console.log(" Rincian Poin Transaksi");
+console.log("Poin kopi", poinKopi);
+console.log("Poin Makanan", poinMakanan);
+console.log("Poin Merchandise", poinMerchandise);
+console.log("Total Poin pelanggan:", totalpoin);
 
 
 // ============================================================
@@ -92,7 +116,6 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 
 
 
-
 // ============================================================
 // AKTIVITAS 5: Function — Membuat Fungsi yang Bisa Dipakai Ulang
 // ============================================================
@@ -100,13 +123,15 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // TODO 5A:
 // Buat fungsi "hitungTotalPoin(p1, p2, p3)" yang menerima 3 parameter nilai poin,
 // menjumlahkannya, dan mengembalikan (return) nilai total penjumlahannya.
+// function hitungTotalPoin(p1,p2,p3){
+//     return p1 + p2 + p3;
+// }
 
 
 
-
-// TODO 5B:
-// Buat fungsi "tentukanTierMember(poin)" yang menerima 1 parameter nilai poin,
-// dan mengembalikan (return) string nama tier beserta keterangannya.
+// // TODO 5B:
+// // Buat fungsi "tentukanTierMember(poin)" yang menerima 1 parameter nilai poin,
+// // dan mengembalikan (return) string nama tier beserta keterangannya.
 
 
 
@@ -119,7 +144,6 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 
 
 
-
 // ============================================================
 // AKTIVITAS 6: Array & For Loop — Daftar Menu Rekomendasi
 // ============================================================
@@ -129,11 +153,9 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 
 
 
-
 // TODO 6B:
 // Gunakan perulangan "for loop" untuk mencetak setiap menu ke Console dengan format:
 // "1. Nama Menu", "2. Nama Menu", dst. Gunakan (i + 1) untuk nomor urutnya.
-
 
 
 
